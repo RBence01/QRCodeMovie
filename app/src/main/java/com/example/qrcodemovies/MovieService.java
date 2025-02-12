@@ -13,20 +13,16 @@ import retrofit2.http.Path;
 public interface MovieService {
     @GET("movie")
     Call<List<Movie>> getAll();
-
-    // GET user by ID
+    
     @GET("movie/{id}")
     Call<Movie> getById(@Path("id") int id);
 
-    // POST (create a new user)
     @POST("movie/")
     Call<Movie> crate(@Body Movie movie);
 
-    // PUT (update a user)
     @PUT("movie/{id}")
     Call<Movie> update(@Path("id") int id, @Body Movie movie);
 
-    // DELETE (delete a user by ID)
     @DELETE("movie/{id}")
     Call<Void> delete(@Path("id") int id);
 }
